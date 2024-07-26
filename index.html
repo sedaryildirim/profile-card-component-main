@@ -1,49 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <link rel="stylesheet" href="./assets/css/styles.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Profile card component</title>
-  
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Profile card component for Frontend Mentor challenge">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Frontend Mentor | Profile card component</title>
 </head>
 <body>
-
-  <div class="wrapper">
-
-    <div class="info">
-      <h1>Victor Crest</h1>
-      <p>26</p>
-      <p>London</p>
-      
-    </div>
-
-    <div class="socials">
-
-      <div class="followers">
-        <h1>80K</h1>
-        <p>Followers</p>
-        
+  <div class="content-wrapper">
+    
+      <div class="wrapper">
+        <div class="bg-card"></div>
+          <article class="profile-card">
+            <div class="profile-info">
+              <img src="./assets/images/image-victor.jpg" alt="Victor Crest">
+              <h1 class="profile-name">Victor Crest <span class="profile-age">26</span></h1>
+              <p class="profile-location">London</p>
+          </div>
+              <section class="profile-stats">
+                  <div class="stat-item">
+                      <h2 class="stat-value">80K</h2>
+                      <p class="stat-label">Followers</p>
+                  </div>
+                  <div class="stat-item">
+                      <h2 class="stat-value">803K</h2>
+                      <p class="stat-label">Likes</p>
+                  </div>
+                  <div class="stat-item">
+                      <h2 class="stat-value">1.4K</h2>
+                      <p class="stat-label">Photos</p>
+                  </div>
+              </section>
+          </article>
       </div>
-
-      <div class="likes">
-        <h1>803K</h1>
-        <p>Likes</p>
-        
-      </div>
-      <div class="photos">
-        <h1>1.4K</h1>
-        <p>Photos</p>
-      </div>
-    </div>
   </div>
-  
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener">Frontend Mentor</a>.
-    Coded by <a href="https://www.frontendmentor.io/profile/sedaryildirim">Sedar Yildirim</a>.
-  </footer>
+    <footer class="attribution">
+        Challenged by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener">Frontend Mentor</a>.
+        Coded by <a href="https://www.frontendmentor.io/profile/sedaryildirim">Sedar Yildirim</a>.
+    </footer>
 </body>
 </html>

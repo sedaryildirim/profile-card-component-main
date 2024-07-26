@@ -1,16 +1,21 @@
 /* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&display=swap');
 
 /* Root */
 :root {
     /* Colors */
-    --violet: hsl(257, 40%, 49%);
-    --magenta: hsl(300, 69%, 71%);  
+    /* Primary */
+    --dark-cyan: hsl(185, 75%, 39%);
+    --dark-blue: hsl(229, 23%, 23%);
+    --gray-blue: hsl(227, 10%, 46%);
+    /* Neutral */
+    --dark-gray: hsl(0, 0%, 59%);
     /* Typography */
-    --heading-font: "Poppins", sans-serif;
-    --body-font: "Open Sans", sans-serif;
+    --heading-font: "Kumbh Sans", sans-serif;
+    --body-font: "Kumbh Sans", sans-serif;
     /* Font weights */
     --font-weight-regular: 400;
-    --font-weight-bold: 600;
+    --font-weight-bold: 700;
 }
 
 /* Reset Body */
@@ -20,42 +25,199 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
-    min-height: 100vh;
-    background-color: var(--violet);
-    background-image: url(../images/bg-mobile.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    color: white;
+    background-color: var(--dark-cyan);
+    background-image: url(../images/bg-pattern-top.svg), url(../images/bg-pattern-bottom.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: top -25vh left -70vw, bottom -20vh right -60vw;
+    background-size: 100vw, 100vw;
     font-family: var(--body-font);
     font-size: 16px;
     line-height: 1.5;
+    display: flex;
+    flex-direction: column;
 }
 
+.content-wrapper {
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 300px;
+    min-height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-card {
+    background-image: url(../images/bg-pattern-card.svg);
+    height: 150px;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.profile-card {
+    background-color: white;
+    border-radius: 0 0 1rem 1rem;
+    padding-top: 4.5rem; /* Add space for the overlapping image */
+}
+
+.profile-info {
+    position: relative;
+    text-align: center;
+    padding-bottom: 1.5rem;
+}
+
+.profile-info img {
+    position: absolute;
+    top: -135px; /* Half the image height to center it */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 96px; /* Adjust based on your image size */
+    height: 96px; /* Adjust based on your image size */
+    border-radius: 50%;
+    border: solid 4px white;
+}
+
+.profile-name {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: var(--dark-blue);
+}
+
+.profile-age {
+    color: var(--gray-blue);
+    font-weight: var(--font-weight-regular);
+}
+
+.profile-location {
+    color: var(--gray-blue);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    border-top: solid 1px var(--dark-gray);
+    padding: 1.5rem 0;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    color: var(--dark-blue);
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    color: var(--gray-blue);
+    letter-spacing: 1px;
+}
 
 /* Footer */
 footer {
-    flex-direction: column;
-    align-items: center;
-}
-
-.socials {
+    flex-shrink: 0;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
     width: 100%;
-    justify-content: flex-end;
-    margin-bottom: 1rem;
 }
 
 .attribution {
     font-size: 11px;
-    width: 100%;
     text-align: center;
+    color: white;
 }
 
 .attribution a {
-    color: white;
+    color: var(--dark-blue);
     text-decoration: none;
 }
+
 .attribution a:hover {
     text-decoration: underline;
+}
+
+/* Media Queries for larger screens */
+@media screen and (min-width: 768px) {
+    body {
+        background-position: top -50vh left -40vw, bottom -50vh right -40vw;
+        background-size: 80vw, 80vw;
+    }
+
+    .wrapper {
+        max-width: 400px;
+        min-height: 400px;
+    }
+
+    .bg-card {
+        height: 200px;
+    }
+
+    .profile-info img {
+        width: 120px;
+        height: 120px;
+        top: -160px;
+    }
+
+    .profile-name {
+        font-size: 1.5rem;
+    }
+
+    .profile-age {
+        font-size: 1.2rem;
+    }
+
+    .profile-location {
+        font-size: 1rem;
+    }
+
+    .profile-stats {
+        padding: 2rem 0;
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        background-position: top -80vh left -40vw, bottom -80vh right -40vw;
+        background-size: 70vw, 70vw;
+    }
+
+    .wrapper {
+        max-width: 450px;
+    }
+
+    .profile-info {
+        padding-bottom: 2rem;
+    }
+
+    .profile-stats {
+        padding: 2.5rem 0;
+    }
+
+    .attribution {
+        font-size: 14px;
+    }
 }
